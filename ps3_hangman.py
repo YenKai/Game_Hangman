@@ -1,13 +1,6 @@
 # Hangman game
 #
-
 # -----------------------------------
-# Helper code
-# You don't need to understand this helper code,
-# but you will have to know how to use the functions
-# (so be sure to read the docstrings!)
-
-
 import random
 
 WORDLIST_FILENAME = "words.txt"
@@ -37,8 +30,6 @@ def chooseWord(wordlist):
     """
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
 
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
@@ -51,7 +42,6 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
     check = 0
     for word in secretWord:
         if word in lettersGuessed:
@@ -70,7 +60,6 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE...
     result=""
     for word in secretWord:
         if word in lettersGuessed:
@@ -117,7 +106,6 @@ def hangman(secretWord):
 
     Follows the other limitations detailed in the problem write-up.
     '''
-    # FILL IN YOUR CODE HERE...
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is ',len(secretWord),' letters long.')
     lettersGuessed = ""
@@ -147,12 +135,5 @@ def hangman(secretWord):
 
 
 
-
-
-# When you've completed your hangman function, uncomment these two lines
-# and run this file to test! (hint: you might want to pick your own
-# secretWord while you're testing)
-#secretWord = 'apple' 
 secretWord = chooseWord(wordlist).lower()
-#secretWord = 'abc'
 hangman(secretWord)
